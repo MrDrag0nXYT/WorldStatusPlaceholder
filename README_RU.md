@@ -16,7 +16,7 @@
 # 🚀 Начало работы
 
 1. Установите плагин [PlaceholderAPI](https://spigotmc.org/resources/6245) и перезапустите сервер
-2. Установите [WorldStatusPlaceholder](https://github.com/MrDrag0nXYT/WorldStatusPlaceholder) в папку
+2. Установите [WorldStatusPlaceholder](https://github.com/MrDrag0nXYT/WorldStatusPlaceholder/releases/latest) в папку
    `/plugins/PlaceholderAPI/expansions/`
 3. Используйте для запуска команду `/papi register WorldStatusPlaceholder-[VERSION].jar` или перезапустите сервер.
    (Замените `[VERSION]` на версию WorldStatusPlaceholder)
