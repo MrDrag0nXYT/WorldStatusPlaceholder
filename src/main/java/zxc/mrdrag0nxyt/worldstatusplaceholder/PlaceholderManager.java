@@ -1,13 +1,12 @@
 package zxc.mrdrag0nxyt.worldstatusplaceholder;
 
 import org.bukkit.World;
-import zxc.mrdrag0nxyt.worldstatusplaceholder.config.Config;
 
-public class Logic {
+public class PlaceholderManager {
 
-    private Config config;
+    private final Config config;
 
-    public Logic(Config config) {
+    public PlaceholderManager(Config config) {
         this.config = config;
     }
 
@@ -16,28 +15,28 @@ public class Logic {
         boolean isThunder = world.isThundering();
 
         if (isThunder) {
-            return "гроза";
+            return config.getThundering();
         } else if (isStorm) {
-            return "дождь";
+            return config.getRaining();
         } else {
-            return "ясно";
+            return config.getCleanWeather();
         }
     }
 
-    public String getTime(World world) {
+    public String getDayTime(World world) {
         long time = world.getTime();
-        String timeFormatted = null;
+        String dayTime = null;
 
-        if (time > 0 && time < 12000) {
-            timeFormatted = "день";
-        } else if (time >= 12000 && time < 13000) {
-            timeFormatted = "вечер";
-        } else if (time >= 13000 && time < 22300) {
-            timeFormatted = "ночь";
-        } else if (time >= 22300 && time <= 24000) {
-            timeFormatted = "утро";
+        if (time >= 23000 || time < 6000) {
+            dayTime = config.getMorning();
+        } else if (time < 12000) {
+            dayTime = config.getDay();
+        } else if (time < 14000) {
+            dayTime = config.getEvening();
+        } else if (time < 22300) {
+            dayTime = config.getNight();
         }
 
-        return timeFormatted;
+        return dayTime;
     }
 }
