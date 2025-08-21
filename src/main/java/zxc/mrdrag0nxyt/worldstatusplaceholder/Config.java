@@ -19,15 +19,15 @@ public class Config {
     private String worldName = "world";
 
     @Getter
-    private String morning = "утро",
-            day = "день",
-            evening = "вечер",
-            night = "ночь";
+    private String morning = "morning",
+            day = "day",
+            evening = "evening",
+            night = "night";
 
     @Getter
-    private String cleanWeather = "ясно",
-            raining = "дождь",
-            thundering = "гроза";
+    private String cleanWeather = "clean",
+            raining = "raining",
+            thundering = "thundering";
 
     public Config(WorldStatusPlaceholder plugin) {
         this.plugin = plugin;

@@ -27,7 +27,7 @@ public class PlaceholderManager {
         long time = world.getTime();
         String dayTime = null;
 
-        if (time >= 23000 || time < 6000) {
+        if (time >= 22300 || time < 6000) {
             dayTime = config.getMorning();
         } else if (time < 12000) {
             dayTime = config.getDay();
